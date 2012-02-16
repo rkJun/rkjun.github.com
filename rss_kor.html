@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>rkJun.github.com</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  
+  <script>
+  	google.load("jquery", "1.7.1");
+  	google.load("jqueryui", "1.8.16");
+  </script>
+  <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>RK mobile rss reader</h1>
+	</div><!-- /header -->
+
+<script>
+/*
+*  How to load a feed via the Feeds API.
+*/
+
+google.load("feeds", "1");
+
+// Our callback function, for when a feed is loaded.
+function feedLoaded(result) {
+  if (!result.error) {
+    // Grab the container we will put the results into
+    var container = document.getElementById("id_rkjun_blog");
+    container.innerHTML = '';
+
+    // Loop through the feeds, putting the titles onto the page.
+    // Check out the result object for a list of properties returned in each entry.
+    // http://code.google.com/apis/ajaxfeeds/documentation/reference.html#JSON
+    for (var i = 0; i < result.feed.entries.length; i++) {
+      var entry = result.feed.entries[i];
+      var div = document.createElement("li");
+      div.appendChild(document.createTextNode(entry.title));
+      container.appendChild(div);
+    }
+  }
+}
+
+function onLoad1() {
+  // Create a feed instance that will grab Digg's feed.
+  var feed = new google.feeds.Feed("http://rkjun.tistory.com/rss");
+
+  // Calling load sends the request off.  It requires a callback function.
+  feed.load(feedLoaded);
+}
+
+google.setOnLoadCallback(onLoad1);
+
+</script>
+
+	<div data-role="content">
+		<p>jQuery Mobile + google API</p>
+	</div><!-- /content -->
+	<div data-role="collapsible" data-collapsed="true">
+			<h3>rkJun blog</h3>
+			<ul data-role="listview" id="id_rkjun_blog">
+			</ul>
+	</div>				
+
+		
+
+	
+
+
+
+
+</div><!-- /page -->
+
+
+</body>
+</html>

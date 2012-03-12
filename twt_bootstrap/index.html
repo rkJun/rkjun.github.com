@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>rkJun's github</title>
+    <meta name="description" content="rkjun's github">
+    <meta name="author" content="rkjun">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-679817-7']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="http://rkjun.github.com">rkJun's github</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="http://twitter.com/rkjun" target="_blank">@rkjun</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>rkJun's github</h1>
+        <p>부숴도 괜찮은 장난감 (<a href="http://redsquirrel.com/dave/work/a2j/patterns/BreakableToys.html" target="_blank">Breakable Toys</a>) 을 만드는 공간</p>
+        <p><a id="a_btn_large_id" class="btn btn-primary btn-large">github.com/rkjun &raquo;</a></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>blog title</h2>
+           <p>blog contents</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Heading</h2>
+           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; rkJun's github 2011-2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.7.1.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#a_btn_large_id").attr("href", "http://www.github.com/rkjun");
+        });
+    </script>
+    <script src="https://www.google.com/jsapi"></script>
+    <script>
+        google.load("feeds", "1");
+
+		// Our callback function, for when a feed is loaded.
+		function feedLoaded(result) {
+		  if (!result.error) {
+		    // Grab the container we will put the results into
+
+
+		    // Loop through the feeds, putting the titles onto the page.
+		    // Check out the result object for a list of properties returned in each entry.
+		    // http://code.google.com/apis/ajaxfeeds/documentation/reference.html#JSON
+		    for (var i = 0; i < result.feed.entries.length; i++) {
+			    var entry = result.feed.entries[i];
+			    $(".span4:eq("+i+") h2").html(entry.title);						    
+			    $(".span4:eq("+i+") p:first").html(entry.content.substring(0,200)+".....");
+			    $(".span4:eq("+i+") p:last a").attr("href", entry.link);
+           	 }
+		  }
+		}
+
+		function onLoad1() {
+		  // Create a feed instance that will grab Digg's feed.
+		  var feed = new google.feeds.Feed("http://rkjun.wordpress.com/feed");
+
+		  // Calling load sends the request off.  It requires a callback function.
+		  feed.load(feedLoaded);
+		}
+
+		google.setOnLoadCallback(onLoad1);
+    </script>
+  </body>
+</html>
+
+

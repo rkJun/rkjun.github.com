@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+  
+  
+<!-- 내용보기: www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html -->
+
+<!-- 더욱 제한된 정책: -->
+	<site-control permitted-cross-domain-policies="none"/>
+	
+<!-- 느슨한 제한정책: -->
+<!--
+	<site-control permitted-cross-domain-policies="all"/>
+	<allow-access-from domain="*" to-ports="*" secure="false"/>
+	<allow-http-request-headers-from domain="*" headers="*" secure="false"/>
+-->
+<!--
+  allow-access-from domain="*"을 사용한 crossdomain.xml을 호스팅하고
+  여기서 작성된 내용을 이해하지 못하는 경우, 어쩌면 
+  보안 취약점 문제에 노출될 수 있습니다. ~ simon willison
+-->
+
+</cross-domain-policy>

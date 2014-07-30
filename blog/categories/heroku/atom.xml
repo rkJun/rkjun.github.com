@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[rkJun's Blog]]></title>
-  <link href="http://rkjun.undefined.kr/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Heroku | rkJun's Blog]]></title>
+  <link href="http://rkjun.undefined.kr/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://rkjun.undefined.kr/"/>
   <updated>2014-07-30T15:19:13+09:00</updated>
   <id>http://rkjun.undefined.kr/</id>
@@ -18,7 +18,7 @@
     <link href="http://rkjun.undefined.kr/blog/2014/07/30/undefined-kr-22th-offline-sails-on-heroku/"/>
     <updated>2014-07-30T14:24:17+09:00</updated>
     <id>http://rkjun.undefined.kr/blog/2014/07/30/undefined-kr-22th-offline-sails-on-heroku</id>
-    <content type="html"><![CDATA[<p>어제, <a href="http://onoffmix.com/event/31122">undefine:D 22번째 모임</a>에서 &ldquo;sails on heroku&#8221;라는 주제로 발표한 내용의 자료를 링크해 둔다.</p>
+    <content type="html"><![CDATA[<p>어제, <a href="http://onoffmix.com/event/31122">undefine:D 22번째 모임</a>에서 &ldquo;sails on heroku"라는 주제로 발표한 내용의 자료를 링크해 둔다.</p>
 
 <p>대강 알고만 있었던 내용들을 발표준비하면서, 좀 더 상세하게 알 수 있게 되었다.
 무엇보다 ruby on rails에 많은 흥미와 관심을 가지게 되었고, 그 관심은 점점 더 커져만 가고 있다.</p>
